@@ -106,7 +106,7 @@
             gap: 12px;
         }
 
-        /* 1. Zona Contact PR */
+        /* 1. Contact PR */
         .contact-actions {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -203,7 +203,7 @@
             border-radius: 10px;
             padding: 12px 14px;
             color: var(--text-main);
-            font-size: 16px; /* Evita zoom automat pe iOS */
+            font-size: 16px;
             outline: none;
         }
 
@@ -260,7 +260,6 @@
             text-transform: uppercase;
         }
 
-        /* Buton Copiere Cod Distinct */
         .code-tap-btn {
             background: #10141c;
             border: 1px solid #283144;
@@ -435,6 +434,20 @@
                     </div>
                 </div>
 
+                <!-- 6. eScento.ro -->
+                <div class="site-card">
+                    <a href="https://escento.ro" target="_blank" class="site-link">
+                        <span>eScento.ro</span>
+                    </a>
+                </div>
+
+                <!-- 7. OrientParfum.ro -->
+                <div class="site-card">
+                    <a href="https://www.orientparfum.ro" target="_blank" class="site-link">
+                        <span>OrientParfum.ro</span>
+                    </a>
+                </div>
+
                 <!-- Restul magazinelor -->
                 <div class="site-card"><a href="https://deluxury.ro" target="_blank" class="site-link"><span>Deluxury</span></a></div>
                 <div class="site-card"><a href="https://esentedelux.ro" target="_blank" class="site-link"><span>Esențe de lux</span></a></div>
@@ -448,7 +461,6 @@
                 <div class="site-card"><a href="https://fragranza.ro" target="_blank" class="site-link"><span>Fragranza</span></a></div>
                 <div class="site-card"><a href="https://zivada.ro" target="_blank" class="site-link"><span>Zivada</span></a></div>
                 <div class="site-card"><a href="https://makeup.ro" target="_blank" class="site-link"><span>Makeup</span></a></div>
-                <div class="site-card"><a href="https://rafinad.ro" target="_blank" class="site-link"><span>Rafinad</span></a></div>
                 <div class="site-card"><a href="https://nichegallery.ro" target="_blank" class="site-link"><span>Nichegallery</span></a></div>
                 
                 <div class="site-card">
@@ -462,7 +474,6 @@
                 </div>
 
                 <div class="site-card"><a href="https://bestvalue.eu" target="_blank" class="site-link"><span>BestValue</span></a></div>
-                <div class="site-card"><a href="https://militaryshop.ro" target="_blank" class="site-link"><span>MilitaryShop</span></a></div>
                 <div class="site-card"><a href="https://evero.ro" target="_blank" class="site-link"><span>Evero</span></a></div>
                 <div class="site-card"><a href="https://noblas.ro" target="_blank" class="site-link"><span>Noblas</span></a></div>
                 <div class="site-card"><a href="https://mmparfumuri.ro" target="_blank" class="site-link"><span>Mmparfumuri</span></a></div>
@@ -473,7 +484,6 @@
                 <div class="site-card"><a href="https://lefragrance.ro" target="_blank" class="site-link"><span>Lefragrance</span></a></div>
                 <div class="site-card"><a href="https://orioudh.ro" target="_blank" class="site-link"><span>Orioudh</span></a></div>
                 <div class="site-card"><a href="https://simplestore.ro" target="_blank" class="site-link"><span>Simplestore</span></a></div>
-                <div class="site-card"><a href="https://zonaliberaconstanta.ro" target="_blank" class="site-link"><span>Zonaliberaconstanta</span></a></div>
                 <div class="site-card"><a href="https://beautybee.ro" target="_blank" class="site-link"><span>Beautybee</span></a></div>
                 <div class="site-card"><a href="https://carespot.ro" target="_blank" class="site-link"><span>Carespot</span></a></div>
                 <div class="site-card"><a href="https://esun.ro" target="_blank" class="site-link"><span>Esun</span></a></div>
@@ -493,7 +503,6 @@
 <div id="toast" class="toast">Cod copiat cu succes! ✓</div>
 
 <script>
-    // Filtrare rapida la tastare
     function filterSites() {
         const query = document.getElementById('siteSearch').value.toLowerCase();
         const cards = document.getElementById('sitesContainer').getElementsByClassName('site-card');
@@ -508,7 +517,6 @@
         }
     }
 
-    // Copiere cod cu feedback toast
     let toastTimeout;
     function copyCode(code) {
         navigator.clipboard.writeText(code).then(() => {
