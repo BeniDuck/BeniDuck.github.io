@@ -2,14 +2,15 @@
 <html lang="ro">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3PGQR2783P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PGQR2783P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-3PGQR2783P');
-</script>
+      gtag('config', 'G-3PGQR2783P');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Fragrance Duck | Hub Oficial</title>
@@ -22,23 +23,21 @@
             --card-bg: #141720;
             --card-subtle: #1a1f2b;
             --border: #232a3a;
-            --border-active: #516485;
-            
-            --blue-gray-accent: #7a94b8;
-            --blue-gray-light: #b0c2db;
-            --blue-gray-hover: #93abd0;
-            
-            --text-main: #f8fafc;
-            --text-muted: #8e99ab;
-            --badge-hot: #e63946;
-            --badge-partner: #38bdf8;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #eab308;
+            --accent-hover: #ca8a04;
+            --badge-bg: #2d2613;
+            --badge-text: #fde047;
+            --btn-bg: #222938;
+            --btn-hover: #2d3748;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -47,604 +46,248 @@
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            padding: 20px 14px calc(40px + env(safe-area-inset-bottom)) 14px;
+            padding: 32px 16px 64px 16px;
+            min-height: 100vh;
         }
 
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 580px;
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 24px;
         }
 
-        /* Profile Header */
+        /* Profil */
         .profile {
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
-            padding: 6px 0;
+            gap: 12px;
         }
 
-        .avatar {
-            width: 82px;
-            height: 82px;
+        .avatar-wrap {
+            width: 88px;
+            height: 88px;
             border-radius: 50%;
-            border: 2.5px solid var(--blue-gray-accent);
-            background: #191f2b;
+            background: linear-gradient(135deg, #eab308, #ca8a04);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 34px;
+            font-size: 42px;
+            box-shadow: 0 8px 24px rgba(234, 179, 8, 0.2);
         }
 
         .profile h1 {
-            font-size: 1.4rem;
+            font-size: 22px;
             font-weight: 800;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.5px;
         }
 
         .profile p {
+            font-size: 14px;
             color: var(--text-muted);
-            font-size: 0.88rem;
-            line-height: 1.45;
-            max-width: 320px;
+            line-height: 1.5;
+            max-width: 440px;
         }
 
-        /* Section Headings */
+        /* Secțiuni */
         .section-title {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 1rem;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
             font-weight: 700;
-            color: var(--blue-gray-light);
-            margin-bottom: 8px;
+            margin-bottom: -12px;
+            padding-left: 4px;
         }
 
-        /* Card Container */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 14px;
+        .links-group {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        /* 1. Contact PR */
-        .contact-actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: var(--blue-gray-accent);
-            color: #0b0d11;
-            font-weight: 700;
-            text-decoration: none;
-            min-height: 48px;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 0.88rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.15s;
-        }
-
-        .btn-primary:active {
-            opacity: 0.85;
-        }
-
-        .btn-secondary {
-            background: var(--card-subtle);
-            color: var(--text-main);
+        /* Card Link/Magazin */
+        .card {
+            background-color: var(--card-bg);
             border: 1px solid var(--border);
-            font-weight: 600;
-            text-decoration: none;
-            min-height: 48px;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 0.88rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.15s;
-        }
-
-        .btn-secondary:active {
-            background: #252c3c;
-        }
-
-        /* 2. Hot Deals */
-        .badge-hot {
-            display: inline-block;
-            background: var(--badge-hot);
-            color: #ffffff;
-            font-size: 0.68rem;
-            font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            width: fit-content;
-        }
-
-        .deal-btn {
-            background: var(--blue-gray-accent);
-            color: #0b0d11;
-            font-weight: 700;
-            text-decoration: none;
-            min-height: 46px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            margin-top: 4px;
-        }
-
-        .deal-btn:active {
-            opacity: 0.85;
-        }
-
-        /* 3. Coduri de Reducere */
-        .coming-soon-box {
-            background: var(--card-subtle);
-            border: 1px dashed var(--border);
-            border-radius: 12px;
-            padding: 14px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.88rem;
-        }
-
-        /* 4. Căutare & Listă Magazine */
-        .search-box {
-            width: 100%;
-            background: var(--card-subtle);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 12px 14px;
-            color: var(--text-main);
-            font-size: 16px;
-            outline: none;
-        }
-
-        .search-box:focus {
-            border-color: var(--blue-gray-accent);
-        }
-
-        .sites-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            max-height: 470px;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            padding-right: 2px;
-        }
-
-        .site-card {
-            background: var(--card-subtle);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            min-height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 10px 10px;
-            gap: 4px;
-            position: relative;
-        }
-
-        .site-card:active {
-            border-color: var(--blue-gray-accent);
-        }
-
-        .site-link {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.86rem;
-            font-weight: 700;
+            border-radius: 14px;
+            padding: 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
+            transition: transform 0.15s ease, border-color 0.15s ease;
         }
 
-        .site-partner {
-            border-color: #314460;
-            background: #171f2d;
+        .card:hover {
+            border-color: #3b455b;
+            transform: translateY(-1px);
         }
 
-        .partner-badge {
-            font-size: 0.65rem;
-            color: var(--badge-partner);
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .card-info h3 {
+            font-size: 16px;
             font-weight: 700;
-            text-transform: uppercase;
+            color: var(--text-main);
         }
 
-        .code-tap-btn {
-            background: #10141c;
-            border: 1px solid #283144;
-            color: var(--blue-gray-light);
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 4px 6px;
-            border-radius: 6px;
+        .card-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .card-actions {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Butoane */
+        .btn-copy {
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px dashed rgba(253, 224, 71, 0.4);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
             cursor: pointer;
-            margin-top: 2px;
-            min-height: 28px;
+            transition: background-color 0.15s ease;
         }
 
-        .code-tap-btn:active {
-            background: var(--blue-gray-accent);
-            color: #0b0d11;
+        .btn-copy:active {
+            transform: scale(0.96);
         }
 
-        .warning-text {
-            font-size: 0.68rem;
-            color: #d99b5e;
-            line-height: 1.2;
+        .btn-visit {
+            background-color: var(--btn-bg);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: background-color 0.15s ease;
         }
 
-        /* Toast Notificare Mobil */
-        .toast {
+        .btn-visit:hover {
+            background-color: var(--btn-hover);
+        }
+
+        /* Contact PR Card */
+        .card-contact {
+            background: linear-gradient(135deg, #141720 0%, #1f2736 100%);
+            border: 1px solid #2e394e;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .card-contact a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        /* Notificare Toast */
+        #toast {
             position: fixed;
-            bottom: calc(20px + env(safe-area-inset-bottom));
+            bottom: 24px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: #253042;
+            background-color: #22c55e;
             color: #ffffff;
-            border: 1px solid var(--blue-gray-accent);
             padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.84rem;
-            font-weight: 600;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
             opacity: 0;
-            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 1000;
             pointer-events: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 999;
         }
 
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
+        #toast.show {
             opacity: 1;
-        }
-
-        footer {
-            text-align: center;
-            font-size: 0.76rem;
-            color: var(--text-muted);
-            margin-top: 4px;
+            transform: translateX(-50%) translateY(0);
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-
-    <!-- Header Profil -->
+    <!-- Secțiunea Header / Profil -->
     <header class="profile">
-        <div class="avatar">🦆</div>
+        <div class="avatar-wrap">🦆</div>
         <h1>Fragrance Duck</h1>
-        <p>Recenzii parfumuri, alerte preț & magazine verificate 100% legitime.</p>
+        <p>Curated list de magazine verificate 100% legit, active discount codes & recenzii detaliate de parfumuri.</p>
     </header>
 
-    <!-- 1. PR & Contact -->
-    <section>
-        <h2 class="section-title">📩 PR & Colaborări</h2>
-        <div class="card">
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
-                Parteneriate, recenzii produse, unboxing sau giveaway-uri:
-            </p>
-            <div class="contact-actions">
-                <a href="mailto:godjabeni14@gmail.com?subject=Colaborare%20TikTok%20Fragrance%20Duck" class="btn-primary">
-                    Email PR
-                </a>
-                <a href="https://www.tiktok.com/@fragrance.duck" target="_blank" class="btn-secondary">
-                    TikTok DM
-                </a>
+    <!-- Secțiunea Hot Deals -->
+    <span class="section-title">Hot Deals & Magazine Verificate</span>
+    <main class="links-group">
+        <!-- Mikey.ro -->
+        <article class="card">
+            <div class="card-info">
+                <h3>Mikey</h3>
+                <p>Parfumuri arăbești & clone de top la prețuri accesibile</p>
             </div>
+            <div class="card-actions">
+                <a href="https://mikey.ro/" target="_blank" rel="noopener noreferrer" class="btn-visit">Vizitează ↗</a>
+            </div>
+        </article>
+
+        <!-- Parfumierul Tau -->
+        <article class="card">
+            <div class="card-info">
+                <h3>Parfumierul Tau</h3>
+                <p>Decanturi & mostre originale pentru testat</p>
+            </div>
+            <div class="card-actions">
+                <button class="btn-copy" onclick="copyCode('BENI10')">BENI10</button>
+                <a href="https://parfumierultau.ro" target="_blank" rel="noopener noreferrer" class="btn-visit">Vizitează ↗</a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Secțiunea Colaborări / PR -->
+    <span class="section-title">Business & Colaborări</span>
+    <section class="card card-contact">
+        <div class="card-info" style="align-items: center;">
+            <h3>Colaborări & PR</h3>
+            <p>Pentru parteneriate, promovare și testare de parfumuri:</p>
+            <a href="mailto:godjabeni14@gmail.com">godjabeni14@gmail.com</a>
         </div>
     </section>
-
-    <!-- 2. Hot Deals -->
-    <section>
-        <h2 class="section-title">🔥 Hot News & Deals</h2>
-        <div class="card">
-            <div>
-                <span class="badge-hot">Ofertă Activă</span>
-                <h3 style="margin-top: 6px; font-size: 1rem;">Lichidare de Stoc Notino</h3>
-                <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 3px;">
-                    Prețuri reduse și lichidări de stoc la parfumuri de designer și nișă.
-                </p>
-            </div>
-            <a href="https://www.notino.ro/lichidare-stoc-parfumuri/?gad_source=1&gad_campaignid=6637876981&gbraid=0AAAAADRCV8x2xihvsv7KFJjMIEJR3Z0OI&gclid=CjwKCAjwn67VBhBnEiwAXUIN1SXCrzpnjJDHg1TbFaV7MkZNYL2raBBxFBA46CvdBj-FGVj5iB9m3hoCcEoQAvD_BwE" 
-               target="_blank" 
-               class="deal-btn">
-                Deschide Oferta pe Notino ↗
-            </a>
-        </div>
-    </section>
-
-    <!-- 3. Coduri de Reducere -->
-    <section>
-        <h2 class="section-title">🏷️ Coduri de Reducere</h2>
-        <div class="card">
-            <div class="coming-soon-box">
-                ⏳ <strong>Va urma...</strong><br>
-                <span style="font-size: 0.78rem; display: block; margin-top: 4px;">
-                    Codurile exclusive Fragrance Duck se adaugă aici curând.
-                </span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Site-uri Legit de Parfumuri -->
-    <section>
-        <h2 class="section-title">✅ Site-uri Legit de Parfumuri</h2>
-        <div class="card">
-            <input type="search" id="siteSearch" class="search-box" placeholder="Caută un magazin..." enterkeyhint="search" onkeyup="filterSites()">
-            
-            <div class="sites-grid" id="sitesContainer">
-                
-                <!-- === PARTENERI OFICIALI (Rămân primii) === -->
-                <div class="site-card site-partner">
-                    <a href="https://parfumierultau.ro" target="_blank" class="site-link">
-                        <span>Parfumeriul Tău</span>
-                    </a>
-                    <span class="partner-badge">★ Partener Oficial</span>
-                </div>
-
-                <div class="site-card site-partner">
-                    <a href="https://mikey.ro" target="_blank" class="site-link">
-                        <span>Mikey.ro</span>
-                    </a>
-                    <span class="partner-badge">★ Partener Oficial</span>
-                </div>
-
-                <!-- === LISTA RESTULUI MAGAZINELOR (Ordonate Alfabetic A-Z) === -->
-                
-                <!-- A -->
-                <div class="site-card">
-                    <a href="https://arabescu.ro" target="_blank" class="site-link">
-                        <span>Arabescu.ro</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('matei10')">
-                        📋 Cod: matei10 (-10%)
-                    </div>
-                </div>
-
-                <div class="site-card">
-                    <a href="https://aromaavenue.ro" target="_blank" class="site-link">
-                        <span>Aroma Avenue</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('Patrik10')">
-                        📋 Cod: Patrik10 (-10%)
-                    </div>
-                </div>
-
-                <!-- B -->
-                <div class="site-card"><a href="https://bestvalue.eu" target="_blank" class="site-link"><span>BestValue</span></a></div>
-                <div class="site-card"><a href="https://brasty.ro" target="_blank" class="site-link"><span>Brasty</span></a></div>
-
-                <!-- C -->
-                <div class="site-card"><a href="https://carespot.ro" target="_blank" class="site-link"><span>Carespot</span></a></div>
-                <div class="site-card">
-                    <a href="https://celeboutique.ro" target="_blank" class="site-link">
-                        <span>Celeboutique</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP10')">
-                        📋 Cod: WP10 (-10%)
-                    </div>
-                </div>
-
-                <!-- D -->
-                <div class="site-card"><a href="https://deluxury.ro" target="_blank" class="site-link"><span>Deluxury</span></a></div>
-                <div class="site-card"><a href="https://depozituldecosmetice.ro" target="_blank" class="site-link"><span>Depozituldecosmetice</span></a></div>
-                <div class="site-card">
-                    <a href="https://dubaicollection.ro" target="_blank" class="site-link">
-                        <span>Dubai Collection</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP10')">
-                        📋 Cod: WP10 (-10%)
-                    </div>
-                </div>
-
-                <!-- E -->
-                <div class="site-card">
-                    <a href="https://www.elefant.ro/subcategorie/parfumuri" target="_blank" class="site-link"><span>Elefant</span></a>
-                    <span class="warning-text">⚠️ Doar vândut de Elefant</span>
-                </div>
-                <div class="site-card">
-                    <a href="https://www.emag.ro/parfumuri/c" target="_blank" class="site-link"><span>eMAG</span></a>
-                    <span class="warning-text">⚠️ Doar vândut de eMAG</span>
-                </div>
-                <div class="site-card"><a href="https://escento.ro" target="_blank" class="site-link"><span>eScento.ro</span></a></div>
-                <div class="site-card"><a href="https://esentedelux.ro" target="_blank" class="site-link"><span>Esențe de lux</span></a></div>
-                <div class="site-card"><a href="https://esun.ro" target="_blank" class="site-link"><span>Esun</span></a></div>
-                <div class="site-card">
-                    <a href="https://evero.ro" target="_blank" class="site-link">
-                        <span>Evero</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('markey10')">
-                        📋 Cod: markey10 (-10%)
-                    </div>
-                </div>
-
-                <!-- F -->
-                <div class="site-card"><a href="https://fragranza.ro" target="_blank" class="site-link"><span>Fragranza</span></a></div>
-
-                <!-- H -->
-                <div class="site-card"><a href="https://hiris.ro" target="_blank" class="site-link"><span>Hiris</span></a></div>
-
-                <!-- K -->
-                <div class="site-card"><a href="https://koku.ro" target="_blank" class="site-link"><span>Koku</span></a></div>
-
-                <!-- L -->
-                <div class="site-card"><a href="https://lefragrance.ro" target="_blank" class="site-link"><span>Lefragrance</span></a></div>
-
-                <!-- M -->
-                <div class="site-card"><a href="https://makeup.ro" target="_blank" class="site-link"><span>Makeup</span></a></div>
-                <div class="site-card">
-                    <a href="https://marab-perfumery.ro" target="_blank" class="site-link">
-                        <span>Marab Perfumery</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('PANDIA15')">
-                        📋 Cod: PANDIA15 (-15%)
-                    </div>
-                </div>
-                <div class="site-card">
-                    <a href="https://marhaba.ro" target="_blank" class="site-link">
-                        <span>Marhaba.ro</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP10')">
-                        📋 Cod: WP10 (-10%)
-                    </div>
-                </div>
-                <div class="site-card">
-                    <a href="https://miraj.ro" target="_blank" class="site-link">
-                        <span>Miraj București</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP10')">
-                        📋 Cod: WP10 (-10%)
-                    </div>
-                </div>
-                <div class="site-card"><a href="https://mmparfumuri.ro" target="_blank" class="site-link"><span>Mmparfumuri</span></a></div>
-
-                <!-- N -->
-                <div class="site-card"><a href="https://noblas.ro" target="_blank" class="site-link"><span>Noblas</span></a></div>
-                <div class="site-card">
-                    <a href="https://www.notino.ro" target="_blank" class="site-link">
-                        <span>Notino</span>
-                    </a>
-                </div>
-                <div class="site-card">
-                    <a href="https://noumeno.ro" target="_blank" class="site-link">
-                        <span>Noùmeno</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('matei10')">
-                        📋 Cod: matei10 (-10%)
-                    </div>
-                </div>
-
-                <!-- O -->
-                <div class="site-card"><a href="https://olfactiv.ro" target="_blank" class="site-link"><span>Olfactiv</span></a></div>
-                <div class="site-card">
-                    <a href="https://orioudh.ro" target="_blank" class="site-link">
-                        <span>Orioudh</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP10')">
-                        📋 Cod: WP10 (-10%)
-                    </div>
-                </div>
-
-                <!-- P -->
-                <div class="site-card"><a href="https://parfimo.ro" target="_blank" class="site-link"><span>Parfimo</span></a></div>
-                <div class="site-card"><a href="https://parfumu.ro" target="_blank" class="site-link"><span>Parfumu</span></a></div>
-                <div class="site-card">
-                    <a href="https://parfumat.ro" target="_blank" class="site-link">
-                        <span>Parfumat.ro</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP10')">
-                        📋 Cod: WP10 (-10%)
-                    </div>
-                </div>
-                <div class="site-card">
-                    <a href="https://parfumuri-ieftine.ro" target="_blank" class="site-link">
-                        <span>Parfumuri-Ieftine</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP10')">
-                        📋 Cod: WP10 (-10%)
-                    </div>
-                </div>
-                <div class="site-card">
-                    <a href="https://www.parfumuri-timisoara.ro/" target="_blank" class="site-link">
-                        <span>Parfumuri Timișoara</span>
-                    </a>
-                </div>
-                <div class="site-card"><a href="https://parfumss.ro" target="_blank" class="site-link"><span>Parfumss</span></a></div>
-
-                <!-- R -->
-                <div class="site-card"><a href="https://rafinad.ro" target="_blank" class="site-link"><span>Rafinad</span></a></div>
-
-                <!-- S -->
-                <div class="site-card"><a href="https://simplestore.ro" target="_blank" class="site-link"><span>Simplestore</span></a></div>
-                <div class="site-card"><a href="https://smartflux.ro" target="_blank" class="site-link"><span>Smartflux</span></a></div>
-                <div class="site-card">
-                    <a href="https://superz.ro" target="_blank" class="site-link">
-                        <span>Superz Budapest</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('PANDIA10')">
-                        📋 Cod: PANDIA10 (-10%)
-                    </div>
-                </div>
-
-                <!-- T -->
-                <div class="site-card">
-                    <a href="https://testament-collection.com" target="_blank" class="site-link">
-                        <span>Testament Coll.</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP15')">
-                        📋 Cod: WP15 (-15%)
-                    </div>
-                </div>
-                <div class="site-card">
-                    <a href="https://themoleculetheory.com" target="_blank" class="site-link">
-                        <span>The Molecule Theory</span>
-                    </a>
-                    <div class="code-tap-btn" onclick="copyCode('WP20')">
-                        📋 Cod: WP20 (-20%)
-                    </div>
-                </div>
-
-                <!-- V -->
-                <div class="site-card"><a href="https://vivantis.ro" target="_blank" class="site-link"><span>Vivantis</span></a></div>
-
-                <!-- Z -->
-                <div class="site-card"><a href="https://zivada.ro" target="_blank" class="site-link"><span>Zivada</span></a></div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        © Fragrance Duck. Verificat și optimizat pentru mobil.
-    </footer>
-
 </div>
 
-<!-- Notificare Toast pe Mobil -->
-<div id="toast" class="toast">Cod copiat cu succes! ✓</div>
+<div id="toast">Codul a fost copiat! ✓</div>
 
 <script>
-    function filterSites() {
-        const query = document.getElementById('siteSearch').value.toLowerCase();
-        const cards = document.getElementById('sitesContainer').getElementsByClassName('site-card');
-        
-        for (let i = 0; i < cards.length; i++) {
-            const nameEl = cards[i].querySelector('.site-link span');
-            if (nameEl && nameEl.innerText.toLowerCase().includes(query)) {
-                cards[i].style.display = 'flex';
-            } else {
-                cards[i].style.display = 'none';
-            }
-        }
-    }
-
     let toastTimeout;
     function copyCode(code) {
         navigator.clipboard.writeText(code).then(() => {
+            // Trimite eveniment către Google Analytics 4
+            if (typeof gtag === 'function') {
+                gtag('event', 'copy_discount_code', {
+                    'code_name': code
+                });
+            }
+
             const toast = document.getElementById('toast');
             toast.innerText = `Codul "${code}" a fost copiat! ✓`;
             toast.classList.add('show');
